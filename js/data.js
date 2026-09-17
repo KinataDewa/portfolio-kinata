@@ -147,7 +147,7 @@ const portfolioData = {
       type: "Proyek Kampus",
       period: "Sep 2024 – Des 2024",
       shortDesc:
-        "Aplikasi absensi mobile mahasiswa berbasis Flutter dengan fitur verifikasi wajah dan GPS real-time.",
+        "Aplikasi absensi mobile mahasiswa berbasis Flutter dengan fitur verifikasi wajah dan GPS real time.",
       description:
         "AttendIT adalah solusi presensi digital yang dirancang untuk mencegah kecurangan absensi. Menggunakan verifikasi biometrik wajah serta deteksi geolokasi GPS real-time untuk memastikan mahasiswa hadir di area kampus pada jam perkuliahan.",
       badge: "Mobile App (Flutter)",
