@@ -1,7 +1,7 @@
 ﻿// Data Portofolio - Kinata Dewa Ariandi
 const portfolioData = {
   personal: {
-    name: "Kinata Dewa Ariandi",
+    name: "Kinata Dewa",
     title: "Software Engineer | Web & Mobile Developer",
     subtitle: "Fresh Graduate Sarjana Terapan Teknik Informatika",
     campus: "Politeknik Negeri Malang",
