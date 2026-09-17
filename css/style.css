@@ -1,0 +1,317 @@
+/* ==========================================================================
+   Kinata Dewa Ariandi — Nordic Slate & Pure Silver Portfolio Stylesheet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Nordic Slate & Silver Palette */
+    --nordic-sky: #38bdf8;
+    --nordic-blue: #0284c7;
+    --nordic-silver: #e2e8f0;
+    --nordic-steel: #94a3b8;
+    
+    /* Dark Theme (Nordic Midnight Navy & Rich Slate) */
+    --bg-dark: #0b0f17;
+    --card-dark: #111827;
+    --card-hover-dark: #172033;
+    --border-dark: rgba(148, 163, 184, 0.14);
+    --border-hover-dark: rgba(56, 189, 248, 0.4);
+    
+    /* Light Theme (Arctic Snow & Cool Slate) */
+    --bg-light: #f8fafc;
+    --card-light: #ffffff;
+    --card-hover-light: #ffffff;
+    --border-light: rgba(148, 163, 184, 0.24);
+    --border-hover-light: rgba(2, 132, 199, 0.45);
+}
+
+/* Base Reset & Typography */
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-dark);
+    color: #e2e8f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light body {
+    background-color: var(--bg-light);
+    color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+}
+
+code, pre, .font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Nordic Subtle Ambient Glow */
+.nordic-glow {
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, rgba(2, 132, 199, 0.03) 50%, transparent 80%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+html.light .nordic-glow {
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 80%);
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+}
+
+/* Scroll Progress Line */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #38bdf8, #0284c7, #e2e8f0);
+    z-index: 100;
+    transition: width 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Frosted Header */
+.elegant-nav {
+    background: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-dark);
+}
+
+html.light .elegant-nav {
+    background: rgba(248, 250, 252, 0.9);
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Nordic Cards */
+.elegant-card,
+.clean-card,
+.nordic-card {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 1.15rem;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+html.light .elegant-card,
+html.light .clean-card,
+html.light .nordic-card {
+    background: var(--card-light);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.elegant-card:hover,
+.clean-card:hover,
+.nordic-card:hover {
+    background: var(--card-hover-dark);
+    border-color: var(--border-hover-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px -4px rgba(56, 189, 248, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+html.light .elegant-card:hover,
+html.light .clean-card:hover,
+html.light .nordic-card:hover {
+    background: var(--card-hover-light);
+    border-color: var(--border-hover-light);
+    box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.08), 0 0 18px -4px rgba(2, 132, 199, 0.12);
+}
+
+/* Pure Silver Tech Tags */
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.725rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #cbd5e1;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    transition: all 0.2s ease;
+}
+
+html.light .tech-tag {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+
+.tech-tag:hover {
+    background: rgba(56, 189, 248, 0.12);
+    color: #7dd3fc;
+    border-color: rgba(56, 189, 248, 0.35);
+}
+
+html.light .tech-tag:hover {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #7dd3fc;
+}
+
+/* Active Nav Link */
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link.active {
+    color: #38bdf8 !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background: #38bdf8;
+    border-radius: 9999px;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+html.light .nav-link.active {
+    color: #0284c7 !important;
+}
+
+html.light .nav-link.active::after {
+    background: #0284c7;
+    box-shadow: 0 0 8px rgba(2, 132, 199, 0.3);
+}
+
+/* Toast Notification */
+#toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: #f8fafc;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    pointer-events: auto;
+    animation: toastIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+html.light .toast {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+    box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.1);
+}
+
+.toast.hiding {
+    animation: toastOut 0.2s ease forwards;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+    }
+}
+
+/* Nordic Primary Button */
+.btn-primary-elegant,
+.btn-nordic {
+    background: linear-gradient(135deg, #0284c7 0%, #1e40af 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 18px -2px rgba(2, 132, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-elegant:hover,
+.btn-nordic:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+    box-shadow: 0 10px 24px -2px rgba(2, 132, 199, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Section Divider */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.15), transparent);
+}
+
+html.light .section-divider {
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
+}
+
+
