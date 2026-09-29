@@ -14,7 +14,7 @@ const portfolioData = {
     bio: "Fresh graduate Sarjana Terapan Teknik Informatika dari Politeknik Negeri Malang (IPK 3.49/4.00) yang berfokus pada software development, mobile development, dan web development. Memiliki pengalaman nyata membangun sistem berbasis PHP, Laravel, React, dan Flutter melalui proyek industri dan kampus.",
     stats: [
       { number: "3.49", label: "IPK / GPA", suffix: "/4.00" },
-      { number: "960", label: "TOEIC Score", suffix: "/990" },
+      { number: "8+", label: "Tech Stack", suffix: "" },
       { number: "5+", label: "Proyek Selesai", suffix: "" },
       { number: "6+", label: "Sertifikasi", suffix: "" },
     ],

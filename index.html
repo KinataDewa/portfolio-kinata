@@ -5,39 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinata Dewa — Software Engineer</title>
     <meta name="description" content="Official Portfolio of Kinata Dewa — Software Engineer, Fullstack Web & Mobile Application Developer.">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['"Outfit"', 'sans-serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="theme-color" content="#0b0f17">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kinata Dewa — Software Engineer">
+    <meta property="og:description" content="Fullstack Web & Mobile Application Developer. Laravel, React, Flutter.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kinata Dewa — Software Engineer">
+    <meta name="twitter:description" content="Fullstack Web & Mobile Application Developer. Laravel, React, Flutter.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0f17'/%3E%3Ctext x='50' y='64' font-family='monospace' font-size='40' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EKD%3C/text%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS (compiled production build — see package.json "build:css") -->
+    <link rel="stylesheet" href="css/tailwind.css">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body class="bg-[#0b0f17] text-slate-100 min-h-screen relative overflow-x-hidden antialiased selection:bg-sky-500 selection:text-slate-950 dark:bg-[#0b0f17] dark:text-slate-100 light:bg-[#f8fafc] light:text-slate-900 transition-colors duration-300">
 
@@ -122,7 +110,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <!-- Left Intro -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left hero-intro">
                     
                     <!-- Availability Pill -->
                     <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-200/80 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300 text-xs font-medium text-sky-400 dark:text-sky-400 light:text-sky-700 shadow-sm backdrop-blur-md">
@@ -176,7 +164,7 @@
                 </div>
 
                 <!-- Right Visual Stats Bento -->
-                <div class="lg:col-span-5">
+                <div class="lg:col-span-5 hero-intro-delay">
                     <div class="nordic-card p-6 sm:p-7 space-y-6">
                         <div class="flex items-center justify-between border-b border-slate-800 dark:border-slate-800 light:border-slate-200 pb-4">
                             <div>
@@ -216,7 +204,7 @@
         <!-- 2. About & Education Section -->
         <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             
-            <div class="max-w-2xl mb-12 space-y-2">
+            <div class="max-w-2xl mb-12 space-y-2 reveal">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-400 dark:text-sky-400 light:text-sky-700">Latar Belakang & Akademik</span>
                 <h2 class="text-3xl font-extrabold font-heading text-white dark:text-white light:text-slate-900 tracking-tight">
                     Tentang Saya & Pendidikan
@@ -273,7 +261,7 @@
         <!-- 3. Work Experience Section -->
         <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             
-            <div class="max-w-2xl mb-12 space-y-2">
+            <div class="max-w-2xl mb-12 space-y-2 reveal">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-400 dark:text-sky-400 light:text-sky-700">Karir & Pengalaman Industri</span>
                 <h2 class="text-3xl font-extrabold font-heading text-white dark:text-white light:text-slate-900 tracking-tight">
                     Pengalaman Kerja
@@ -297,7 +285,7 @@
         <!-- 4. Projects Portfolio Section (Searchable & Filterable) -->
         <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
                 <div class="max-w-xl space-y-2">
                     <span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-400 dark:text-sky-400 light:text-sky-700">Portofolio Karya</span>
                     <h2 class="text-3xl font-extrabold font-heading text-white dark:text-white light:text-slate-900 tracking-tight">
@@ -344,7 +332,7 @@
         <!-- 5. Skills & Tech Stack Section -->
         <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             
-            <div class="max-w-2xl mb-12 space-y-2">
+            <div class="max-w-2xl mb-12 space-y-2 reveal">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-400 dark:text-sky-400 light:text-sky-700">Keahlian & Penguasaan Teknologi</span>
                 <h2 class="text-3xl font-extrabold font-heading text-white dark:text-white light:text-slate-900 tracking-tight">
                     Keahlian & Tech Arsenal
@@ -399,7 +387,7 @@
         <!-- 6. Certifications & Achievements Section -->
         <section id="certifications" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
             
-            <div class="max-w-2xl mb-12 space-y-2">
+            <div class="max-w-2xl mb-12 space-y-2 reveal">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-400 dark:text-sky-400 light:text-sky-700">Validasi Kompetensi</span>
                 <h2 class="text-3xl font-extrabold font-heading text-white dark:text-white light:text-slate-900 tracking-tight">
                     Sertifikasi & Lisensi

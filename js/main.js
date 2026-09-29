@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollSpy();
     initContactForm();
+    initScrollReveal();
 });
 
 // 1. Theme Toggle (Dark / Light Mode)
@@ -318,7 +319,7 @@ function renderProjects() {
             <div>
                 <!-- Image Header -->
                 <div class="relative h-44 bg-slate-900 overflow-hidden group">
-                    <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="${project.image}" alt="${project.title}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                     <div class="absolute top-3 right-3">
                         <span class="px-2.5 py-0.5 text-[10px] font-semibold rounded-full bg-slate-900/90 text-sky-300 border border-slate-700/80 backdrop-blur-sm">
@@ -540,7 +541,42 @@ function initScrollSpy() {
     });
 }
 
-// 11. Contact Form -> WhatsApp Direct Message
+// 11.5 Scroll Reveal (section headers + cards fade/slide in on view)
+function initScrollReveal() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const targets = Array.from(document.querySelectorAll('.reveal, .nordic-card'))
+        .filter(el => !el.closest('#project-modal') && !el.closest('#home'));
+    if (!targets.length) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(el => el.classList.add('reveal-visible'));
+        return;
+    }
+
+    targets.forEach(el => el.classList.add('reveal'));
+
+    const groups = new Map();
+    targets.forEach(el => {
+        const parentKey = el.parentElement;
+        const idx = groups.get(parentKey) || 0;
+        el.style.transitionDelay = `${Math.min(idx, 8) * 60}ms`;
+        groups.set(parentKey, idx + 1);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(el => observer.observe(el));
+}
+
+// 12. Contact Form -> WhatsApp Direct Message
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
