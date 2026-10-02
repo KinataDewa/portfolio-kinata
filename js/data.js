@@ -249,8 +249,18 @@ const portfolioData = {
         "Sistem Business Intelligence komprehensif yang mengubah data akademik mentah menjadi wawasan visual interaktif. Memfasilitasi pemangku kepentingan dalam mendeteksi tren kelulusan, evaluasi kurikulum, dan performa akademik mahasiswa.",
       badge: "Business Intelligence & Data",
       icon: "fas fa-chart-pie",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/projects/bi-academic-dashboard/02.webp",
+      images: [
+        { src: "assets/images/projects/bi-academic-dashboard/01.webp", caption: "Halaman Login" },
+        { src: "assets/images/projects/bi-academic-dashboard/02.webp", caption: "Overview Dashboard" },
+        { src: "assets/images/projects/bi-academic-dashboard/03.webp", caption: "Statistik & Distribusi Akademik" },
+        { src: "assets/images/projects/bi-academic-dashboard/04.webp", caption: "Peringkat Mahasiswa" },
+        { src: "assets/images/projects/bi-academic-dashboard/05.webp", caption: "Laporan Tren" },
+        { src: "assets/images/projects/bi-academic-dashboard/06.webp", caption: "Analisis Korelasi (1)" },
+        { src: "assets/images/projects/bi-academic-dashboard/07.webp", caption: "Analisis Korelasi (2)" },
+        { src: "assets/images/projects/bi-academic-dashboard/08.webp", caption: "Prediksi ARIMA (1)" },
+        { src: "assets/images/projects/bi-academic-dashboard/09.webp", caption: "Prediksi ARIMA (2)" },
+      ],
       techStack: [
         "Business Intelligence",
         "Data Analytics",
@@ -280,8 +290,12 @@ const portfolioData = {
         "Sistem digitalisasi pemeliharaan infrastruktur gedung Plaza SUA yang dirancang dari tahap requirement gathering, arsitektur database, antarmuka pengguna, hingga user acceptance testing bersama staf operasional di lapangan.",
       badge: "Industrial Enterprise Web",
       icon: "fas fa-building-shield",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/projects/sua-maintenance-system/01.webp",
+      images: [
+        { src: "assets/images/projects/sua-maintenance-system/01.webp", caption: "Dashboard Operasional" },
+        { src: "assets/images/projects/sua-maintenance-system/02.webp", caption: "Input Aktivitas" },
+        { src: "assets/images/projects/sua-maintenance-system/03.webp", caption: "Tiket Masalah" },
+      ],
       techStack: [
         "PHP",
         "Laravel",
@@ -311,8 +325,12 @@ const portfolioData = {
         "Transformasi sistem registrasi tamu kantor menjadi lebih modern, aman, dan responsif. Dilengkapi dengan auto-photo capture berbasis timestamp kamera serta manajemen tamu acara khusus.",
       badge: "Industrial Web App",
       icon: "fas fa-address-book",
-      image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
+      image: "assets/images/projects/guestbook-system/01.webp",
+      images: [
+        { src: "assets/images/projects/guestbook-system/01.webp", caption: "Dashboard Buku Tamu" },
+        { src: "assets/images/projects/guestbook-system/02.webp", caption: "Form Registrasi Tamu" },
+        { src: "assets/images/projects/guestbook-system/03.webp", caption: "Riwayat Kunjungan" },
+      ],
       techStack: ["PHP", "Laravel", "Webcam JS API", "MySQL", "Responsive UI"],
       features: [
         "Dokumentasi Foto Otomatis dengan Timestamp Watermark",

@@ -423,19 +423,56 @@ function initFilterAndSearch() {
     }
 }
 
-// 8. Modal Handling
+// 8. Modal Handling (with multi-photo gallery support)
+let modalGalleryImages = [];
+let modalGalleryIndex = 0;
+
 function initModal() {
     const modal = document.getElementById('project-modal');
     const closeBtn = document.getElementById('close-modal-btn');
     const backdrop = document.getElementById('modal-backdrop');
+    const prevBtn = document.getElementById('modal-prev-btn');
+    const nextBtn = document.getElementById('modal-next-btn');
 
     if (closeBtn) closeBtn.addEventListener('click', closeProjectModal);
     if (backdrop) backdrop.addEventListener('click', closeProjectModal);
+    if (prevBtn) prevBtn.addEventListener('click', () => showModalImage(modalGalleryIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showModalImage(modalGalleryIndex + 1));
 
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-            closeProjectModal();
-        }
+        if (!modal || modal.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeProjectModal();
+        if (e.key === 'ArrowLeft') showModalImage(modalGalleryIndex - 1);
+        if (e.key === 'ArrowRight') showModalImage(modalGalleryIndex + 1);
+    });
+}
+
+function showModalImage(index) {
+    if (!modalGalleryImages.length) return;
+    modalGalleryIndex = (index + modalGalleryImages.length) % modalGalleryImages.length;
+    const current = modalGalleryImages[modalGalleryIndex];
+
+    const modalImage = document.getElementById('modal-image');
+    const modalCounter = document.getElementById('modal-counter');
+    const modalCaption = document.getElementById('modal-caption');
+
+    modalImage.src = current.src;
+
+    if (modalGalleryImages.length > 1) {
+        modalCounter.textContent = `${modalGalleryIndex + 1} / ${modalGalleryImages.length}`;
+    }
+
+    if (current.caption) {
+        modalCaption.textContent = current.caption;
+        modalCaption.classList.remove('hidden');
+    } else {
+        modalCaption.classList.add('hidden');
+    }
+
+    document.querySelectorAll('#modal-thumbnails .modal-thumb').forEach((thumb, i) => {
+        thumb.classList.toggle('ring-2', i === modalGalleryIndex);
+        thumb.classList.toggle('ring-sky-400', i === modalGalleryIndex);
+        thumb.classList.toggle('opacity-50', i !== modalGalleryIndex);
     });
 }
 
@@ -444,7 +481,6 @@ window.openProjectModal = function(projectId) {
     if (!project) return;
 
     const modal = document.getElementById('project-modal');
-    const modalImage = document.getElementById('modal-image');
     const modalBadge = document.getElementById('modal-badge');
     const modalTitle = document.getElementById('modal-title');
     const modalPeriod = document.getElementById('modal-period');
@@ -453,8 +489,39 @@ window.openProjectModal = function(projectId) {
     const modalFeatures = document.getElementById('modal-features');
     const modalTech = document.getElementById('modal-tech');
     const modalGithub = document.getElementById('modal-github');
+    const modalNavBar = document.getElementById('modal-nav-bar');
+    const modalThumbnails = document.getElementById('modal-thumbnails');
+    const modalCaption = document.getElementById('modal-caption');
 
-    modalImage.src = project.image;
+    modalGalleryImages = (project.images && project.images.length)
+        ? project.images
+        : [{ src: project.image, caption: '' }];
+    modalGalleryIndex = 0;
+
+    const hasGallery = modalGalleryImages.length > 1;
+    modalNavBar.classList.toggle('hidden', !hasGallery);
+    modalNavBar.classList.toggle('flex', hasGallery);
+    modalCaption.classList.remove('hidden');
+
+    if (hasGallery) {
+        modalThumbnails.classList.remove('hidden');
+        modalThumbnails.classList.add('flex');
+        modalThumbnails.innerHTML = modalGalleryImages.map((img, i) => `
+            <button class="modal-thumb shrink-0 w-12 h-9 rounded-md overflow-hidden border border-slate-700/60 transition-all" data-index="${i}" title="${img.caption || ''}">
+                <img src="${img.src}" alt="${img.caption || ''}" class="w-full h-full object-cover" loading="lazy">
+            </button>
+        `).join('');
+        modalThumbnails.querySelectorAll('.modal-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => showModalImage(parseInt(thumb.dataset.index, 10)));
+        });
+    } else {
+        modalThumbnails.classList.add('hidden');
+        modalThumbnails.classList.remove('flex');
+        modalThumbnails.innerHTML = '';
+    }
+
+    showModalImage(0);
+
     modalBadge.textContent = project.badge;
     modalTitle.textContent = project.title;
     modalPeriod.textContent = project.period;

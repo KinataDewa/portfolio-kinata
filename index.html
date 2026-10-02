@@ -511,23 +511,42 @@
         <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"></div>
 
         <!-- Modal Box -->
-        <div class="relative nordic-card max-w-xl w-full overflow-hidden z-10 my-8 p-0 border border-slate-700">
-            
+        <div class="relative nordic-card max-w-lg w-full overflow-hidden z-10 my-8 p-0 border border-slate-700 max-h-[90vh] flex flex-col">
+
             <!-- Close Button -->
-            <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center z-20 transition-colors text-xs border border-white/10">
+            <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center z-30 transition-colors text-xs border border-white/10">
                 <i class="fas fa-xmark"></i>
             </button>
 
-            <!-- Image Header -->
-            <div class="relative h-52 bg-slate-900 overflow-hidden">
-                <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/40 to-transparent"></div>
-                <div class="absolute bottom-4 left-5 right-5">
-                    <span id="modal-badge" class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-sky-500 text-slate-950 shadow-sm"></span>
-                    <h3 id="modal-title" class="text-xl font-bold font-heading text-white mt-1.5"></h3>
-                    <div class="text-[11px] text-slate-300 mt-0.5">
-                        <span id="modal-type"></span> • <span id="modal-period" class="font-mono"></span>
-                    </div>
+            <!-- Scrollable Body -->
+            <div class="overflow-y-auto flex-1 min-h-0">
+
+            <!-- Image Header (gambar utuh, tidak dipotong) -->
+            <div class="bg-slate-950 flex items-center justify-center max-h-[50vh]">
+                <img id="modal-image" src="" alt="Project Preview" class="w-full h-auto max-h-[50vh] object-contain">
+            </div>
+
+            <!-- Gallery Nav Bar (di bawah gambar) -->
+            <div id="modal-nav-bar" class="hidden items-center justify-between px-4 py-2 bg-slate-900/60 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
+                <button id="modal-prev-btn" aria-label="Foto sebelumnya" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
+                    <i class="fas fa-chevron-left text-xs"></i>
+                </button>
+                <span id="modal-counter" class="text-[11px] font-mono font-semibold text-slate-300"></span>
+                <button id="modal-next-btn" aria-label="Foto selanjutnya" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Thumbnail Strip (gallery proyek dengan >1 foto) -->
+            <div id="modal-thumbnails" class="hidden gap-1.5 p-2.5 overflow-x-auto border-b border-slate-800 dark:border-slate-800 light:border-slate-200"></div>
+            <p id="modal-caption" class="hidden px-6 pt-2.5 text-[11px] text-sky-400 font-medium"></p>
+
+            <!-- Title Block (di luar gambar, tidak lagi menutupi screenshot) -->
+            <div class="px-6 pt-4">
+                <span id="modal-badge" class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-sky-500 text-slate-950 shadow-sm"></span>
+                <h3 id="modal-title" class="text-lg font-bold font-heading text-white dark:text-white light:text-slate-900 mt-1.5"></h3>
+                <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 mt-0.5">
+                    <span id="modal-type"></span> • <span id="modal-period" class="font-mono"></span>
                 </div>
             </div>
 
@@ -561,6 +580,8 @@
                 </div>
             </div>
 
+            </div>
+
         </div>
     </div>
 
@@ -584,7 +605,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/data.js?v=2"></script>
-    <script src="js/main.js?v=2"></script>
+    <script src="js/data.js?v=3"></script>
+    <script src="js/main.js?v=3"></script>
 </body>
 </html>
