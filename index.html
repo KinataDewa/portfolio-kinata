@@ -474,11 +474,11 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                                 <div>
                                     <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 mb-1">Nama Anda</label>
-                                    <input type="text" id="contact-name" required placeholder="Contoh: Budi Santoso" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300 text-xs text-slate-100 dark:text-slate-100 light:text-slate-900 focus:outline-none focus:border-sky-400 transition-colors">
+                                    <input type="text" id="contact-name" required placeholder="Contoh: Kinata Dewa" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300 text-xs text-slate-100 dark:text-slate-100 light:text-slate-900 focus:outline-none focus:border-sky-400 transition-colors">
                                 </div>
                                 <div>
                                     <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 mb-1">Email / Kontak</label>
-                                    <input type="text" id="contact-email" required placeholder="budi@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300 text-xs text-slate-100 dark:text-slate-100 light:text-slate-900 focus:outline-none focus:border-sky-400 transition-colors">
+                                    <input type="text" id="contact-email" required placeholder="kinatadewaariandi@gmail.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100 border border-slate-700/60 dark:border-slate-700/60 light:border-slate-300 text-xs text-slate-100 dark:text-slate-100 light:text-slate-900 focus:outline-none focus:border-sky-400 transition-colors">
                                 </div>
                             </div>
 
@@ -511,7 +511,7 @@
         <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"></div>
 
         <!-- Modal Box -->
-        <div class="relative nordic-card max-w-lg w-full overflow-hidden z-10 my-2 sm:my-8 p-0 border border-slate-700 max-h-[94vh] sm:max-h-[90vh] flex flex-col">
+        <div class="relative nordic-card max-w-lg lg:max-w-2xl w-full overflow-hidden z-10 my-auto p-0 border border-slate-700 max-h-[60vh] sm:max-h-[75vh] lg:max-h-[92vh] flex flex-col">
 
             <!-- Close Button -->
             <button id="close-modal-btn" class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center z-30 transition-colors text-xs border border-white/10">
@@ -521,12 +521,12 @@
             <!-- Fixed Header: gambar, nav galeri, thumbnail, judul (tidak ikut scroll) -->
 
             <!-- Image Header (gambar utuh, tidak dipotong) -->
-            <div class="bg-slate-950 flex items-center justify-center h-36 sm:h-64">
+            <div class="bg-slate-950 flex items-center justify-center h-20 sm:h-56 lg:h-80">
                 <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-contain">
             </div>
 
             <!-- Gallery Nav Bar (di bawah gambar) -->
-            <div id="modal-nav-bar" class="hidden items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/60 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
+            <div id="modal-nav-bar" class="hidden items-center justify-between px-3 sm:px-4 py-1 sm:py-2 bg-slate-900/60 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
                 <button id="modal-prev-btn" aria-label="Foto sebelumnya" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
                     <i class="fas fa-chevron-left text-[10px] sm:text-xs"></i>
                 </button>
@@ -537,23 +537,23 @@
             </div>
 
             <!-- Thumbnail Strip (gallery proyek dengan >1 foto) -->
-            <div id="modal-thumbnails" class="hidden gap-1.5 p-2 sm:p-2.5 overflow-x-auto border-b border-slate-800 dark:border-slate-800 light:border-slate-200"></div>
-            <p id="modal-caption" class="hidden px-4 sm:px-6 pt-2 sm:pt-2.5 text-[10px] sm:text-[11px] text-sky-400 font-medium"></p>
+            <div id="modal-thumbnails" class="hidden gap-1.5 p-1.5 sm:p-2.5 overflow-x-auto border-b border-slate-800 dark:border-slate-800 light:border-slate-200"></div>
+            <p id="modal-caption" class="hidden px-4 sm:px-6 pt-1.5 sm:pt-2.5 text-[10px] sm:text-[11px] text-sky-400 font-medium"></p>
 
             <!-- Title Block (di luar gambar, tidak lagi menutupi screenshot) -->
-            <div class="px-4 sm:px-6 pt-3 sm:pt-4">
+            <div class="px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 lg:pt-5">
                 <span id="modal-badge" class="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold rounded-full bg-sky-500 text-slate-950 shadow-sm"></span>
-                <h3 id="modal-title" class="text-base sm:text-lg font-bold font-heading text-white dark:text-white light:text-slate-900 mt-1 sm:mt-1.5"></h3>
-                <div class="text-[10px] sm:text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 mt-0.5">
+                <h3 id="modal-title" class="text-base sm:text-lg lg:text-2xl font-bold font-heading text-white dark:text-white light:text-slate-900 mt-1 sm:mt-1.5"></h3>
+                <div class="text-[10px] sm:text-[11px] lg:text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 mt-0.5">
                     <span id="modal-type"></span> • <span id="modal-period" class="font-mono"></span>
                 </div>
             </div>
 
             <!-- Modal Content (bagian ini saja yang scroll) -->
-            <div class="overflow-y-auto flex-1 min-h-0 p-4 sm:p-6 space-y-3 sm:space-y-4">
+            <div class="overflow-y-auto flex-1 min-h-0 isolate p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-5" style="-webkit-overflow-scrolling: touch;">
                 <div>
                     <h4 class="text-[10px] font-bold font-mono uppercase tracking-widest text-sky-400 mb-1">Deskripsi Proyek</h4>
-                    <p id="modal-description" class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed"></p>
+                    <p id="modal-description" class="text-xs sm:text-sm lg:text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed"></p>
                 </div>
 
                 <div>
