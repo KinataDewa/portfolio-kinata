@@ -105,13 +105,13 @@ const portfolioData = {
   experiences: [
     {
       role: "Software Engineer Intern",
-      company: "PT Sarana Utama Adimandiri",
+      company: "Perusahaan Manajemen Properti & Gedung Komersial",
       location: "Jakarta Selatan, DKI Jakarta, Indonesia",
       period: "Jul 2025 – Dec 2025",
       type: "Magang Industri",
       highlights: [
         "Meningkatkan sistem Guest Book menjadi lebih modern dan responsif, menambahkan fitur tipe tamu, penerima tamu, dokumentasi foto otomatis dengan timestamp, dan pencatatan Tamu Event.",
-        "Mengembangkan Sistem Informasi Maintenance Gedung Plaza SUA yang mencakup 5 kategori proses (form harian, pengecekan, perawatan, perbaikan, dan aduan) melalui proses requirement gathering, perancangan sistem, hingga pengujian langsung bersama staff operasional.",
+        "Mengembangkan Sistem Informasi Maintenance Gedung Komersial yang mencakup 5 kategori proses (form harian, pengecekan, perawatan, perbaikan, dan aduan) melalui proses requirement gathering, perancangan sistem, hingga pengujian langsung bersama staff operasional.",
         "Mengoptimalkan performa alur data dan kemudahan antarmuka bagi staf di lapangan agar pencatatan maintenance lebih cepat dan minim kesalahan.",
       ],
       techStack: [
@@ -279,22 +279,22 @@ const portfolioData = {
       demoUrl: null,
     },
     {
-      id: "sua-maintenance-system",
-      title: "Plaza SUA Building Maintenance Information System",
+      id: "building-maintenance-system",
+      title: "Building Maintenance Information System",
       category: "web",
-      type: "Proyek Industri (PT Sarana Utama Adimandiri)",
+      type: "Magang Industri",
       period: "Jul 2025 – Des 2025",
       shortDesc:
         "Sistem informasi maintenance gedung mencakup 5 kategori proses operasional (form harian, pengecekan, perawatan, perbaikan, aduan).",
       description:
-        "Sistem digitalisasi pemeliharaan infrastruktur gedung Plaza SUA yang dirancang dari tahap requirement gathering, arsitektur database, antarmuka pengguna, hingga user acceptance testing bersama staf operasional di lapangan.",
+        "Sistem digitalisasi pemeliharaan infrastruktur gedung komersial yang dirancang dari tahap requirement gathering, arsitektur database, antarmuka pengguna, hingga user acceptance testing bersama staf operasional di lapangan. Catatan: seluruh data & tangkapan layar yang ditampilkan adalah data dummy/sampel demi menjaga kerahasiaan data klien.",
       badge: "Industrial Enterprise Web",
       icon: "fas fa-building-shield",
-      image: "assets/images/projects/sua-maintenance-system/01.webp",
+      image: "assets/images/projects/building-maintenance-system/01.webp",
       images: [
-        { src: "assets/images/projects/sua-maintenance-system/01.webp", caption: "Dashboard Operasional" },
-        { src: "assets/images/projects/sua-maintenance-system/02.webp", caption: "Input Aktivitas" },
-        { src: "assets/images/projects/sua-maintenance-system/03.webp", caption: "Tiket Masalah" },
+        { src: "assets/images/projects/building-maintenance-system/01.webp", caption: "Dashboard Operasional" },
+        { src: "assets/images/projects/building-maintenance-system/02.webp", caption: "Input Aktivitas" },
+        { src: "assets/images/projects/building-maintenance-system/03.webp", caption: "Tiket Masalah" },
       ],
       techStack: [
         "PHP",
@@ -317,12 +317,12 @@ const portfolioData = {
       id: "guestbook-system",
       title: "Modern Smart Guest Book & Event System",
       category: "web",
-      type: "Proyek Industri (PT Sarana Utama Adimandiri)",
+      type: "Magang Industri",
       period: "Jul 2025 – Sep 2025",
       shortDesc:
         "Modernisasi sistem buku tamu dengan penangkapan foto otomatis, timestamp, dan pencatatan Tamu Event.",
       description:
-        "Transformasi sistem registrasi tamu kantor menjadi lebih modern, aman, dan responsif. Dilengkapi dengan auto-photo capture berbasis timestamp kamera serta manajemen tamu acara khusus.",
+        "Transformasi sistem registrasi tamu kantor menjadi lebih modern, aman, dan responsif. Dilengkapi dengan auto-photo capture berbasis timestamp kamera serta manajemen tamu acara khusus. Catatan: seluruh data & tangkapan layar yang ditampilkan adalah data dummy/sampel demi menjaga kerahasiaan data klien.",
       badge: "Industrial Web App",
       icon: "fas fa-address-book",
       image: "assets/images/projects/guestbook-system/01.webp",
