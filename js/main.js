@@ -22,8 +22,8 @@ function initTheme() {
     const themeIcon = document.getElementById('theme-icon');
     const html = document.documentElement;
 
-    // Check saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Check saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'light') {
         html.classList.remove('dark');
         html.classList.add('light');

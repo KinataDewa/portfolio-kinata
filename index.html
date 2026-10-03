@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id" class="light scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +71,7 @@
             <!-- Actions (Theme Toggle & CTA) -->
             <div class="hidden sm:flex items-center space-x-3">
                 <button id="theme-toggle" aria-label="Toggle Theme" class="w-9 h-9 rounded-xl bg-slate-800/60 hover:bg-slate-800 dark:bg-slate-800/60 dark:hover:bg-slate-800 light:bg-slate-200 light:hover:bg-slate-300 border border-slate-700/60 light:border-slate-300 flex items-center justify-center transition-colors text-slate-300 light:text-slate-700" title="Ganti Mode Gelap/Terang">
-                    <i id="theme-icon" class="fas fa-sun text-xs text-amber-400"></i>
+                    <i id="theme-icon" class="fas fa-moon text-xs text-slate-700"></i>
                 </button>
                 <a href="#contact" class="px-4 py-2 rounded-xl btn-nordic text-xs font-semibold flex items-center space-x-1.5">
                     <span>Hubungi Saya</span>
@@ -506,52 +506,51 @@
     </main>
 
     <!-- Project Detail Modal Popup -->
-    <div id="project-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+    <div id="project-modal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-2 sm:p-4">
         <!-- Backdrop -->
         <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"></div>
 
         <!-- Modal Box -->
-        <div class="relative nordic-card max-w-lg w-full overflow-hidden z-10 my-8 p-0 border border-slate-700 max-h-[90vh] flex flex-col">
+        <div class="relative nordic-card max-w-lg w-full overflow-hidden z-10 my-2 sm:my-8 p-0 border border-slate-700 max-h-[94vh] sm:max-h-[90vh] flex flex-col">
 
             <!-- Close Button -->
-            <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center z-30 transition-colors text-xs border border-white/10">
+            <button id="close-modal-btn" class="absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center z-30 transition-colors text-xs border border-white/10">
                 <i class="fas fa-xmark"></i>
             </button>
 
-            <!-- Scrollable Body -->
-            <div class="overflow-y-auto flex-1 min-h-0">
+            <!-- Fixed Header: gambar, nav galeri, thumbnail, judul (tidak ikut scroll) -->
 
             <!-- Image Header (gambar utuh, tidak dipotong) -->
-            <div class="bg-slate-950 flex items-center justify-center h-52 sm:h-64">
+            <div class="bg-slate-950 flex items-center justify-center h-36 sm:h-64">
                 <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-contain">
             </div>
 
             <!-- Gallery Nav Bar (di bawah gambar) -->
-            <div id="modal-nav-bar" class="hidden items-center justify-between px-4 py-2 bg-slate-900/60 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
-                <button id="modal-prev-btn" aria-label="Foto sebelumnya" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
-                    <i class="fas fa-chevron-left text-xs"></i>
+            <div id="modal-nav-bar" class="hidden items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/60 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
+                <button id="modal-prev-btn" aria-label="Foto sebelumnya" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
+                    <i class="fas fa-chevron-left text-[10px] sm:text-xs"></i>
                 </button>
-                <span id="modal-counter" class="text-[11px] font-mono font-semibold text-slate-300"></span>
-                <button id="modal-next-btn" aria-label="Foto selanjutnya" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
-                    <i class="fas fa-chevron-right text-xs"></i>
+                <span id="modal-counter" class="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-300"></span>
+                <button id="modal-next-btn" aria-label="Foto selanjutnya" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition-colors border border-slate-700">
+                    <i class="fas fa-chevron-right text-[10px] sm:text-xs"></i>
                 </button>
             </div>
 
             <!-- Thumbnail Strip (gallery proyek dengan >1 foto) -->
-            <div id="modal-thumbnails" class="hidden gap-1.5 p-2.5 overflow-x-auto border-b border-slate-800 dark:border-slate-800 light:border-slate-200"></div>
-            <p id="modal-caption" class="hidden px-6 pt-2.5 text-[11px] text-sky-400 font-medium"></p>
+            <div id="modal-thumbnails" class="hidden gap-1.5 p-2 sm:p-2.5 overflow-x-auto border-b border-slate-800 dark:border-slate-800 light:border-slate-200"></div>
+            <p id="modal-caption" class="hidden px-4 sm:px-6 pt-2 sm:pt-2.5 text-[10px] sm:text-[11px] text-sky-400 font-medium"></p>
 
             <!-- Title Block (di luar gambar, tidak lagi menutupi screenshot) -->
-            <div class="px-6 pt-4">
-                <span id="modal-badge" class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-sky-500 text-slate-950 shadow-sm"></span>
-                <h3 id="modal-title" class="text-lg font-bold font-heading text-white dark:text-white light:text-slate-900 mt-1.5"></h3>
-                <div class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 mt-0.5">
+            <div class="px-4 sm:px-6 pt-3 sm:pt-4">
+                <span id="modal-badge" class="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold rounded-full bg-sky-500 text-slate-950 shadow-sm"></span>
+                <h3 id="modal-title" class="text-base sm:text-lg font-bold font-heading text-white dark:text-white light:text-slate-900 mt-1 sm:mt-1.5"></h3>
+                <div class="text-[10px] sm:text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 mt-0.5">
                     <span id="modal-type"></span> • <span id="modal-period" class="font-mono"></span>
                 </div>
             </div>
 
-            <!-- Modal Content -->
-            <div class="p-6 space-y-4">
+            <!-- Modal Content (bagian ini saja yang scroll) -->
+            <div class="overflow-y-auto flex-1 min-h-0 p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div>
                     <h4 class="text-[10px] font-bold font-mono uppercase tracking-widest text-sky-400 mb-1">Deskripsi Proyek</h4>
                     <p id="modal-description" class="text-xs sm:text-sm text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed"></p>
@@ -578,8 +577,6 @@
                         <span>Lihat di GitHub</span>
                     </a>
                 </div>
-            </div>
-
             </div>
 
         </div>
